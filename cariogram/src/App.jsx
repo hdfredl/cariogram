@@ -4,15 +4,16 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 // import { ProtectedRoute } from "./components/ProtectedRoute";
 
-import landingpage from "./pages/landingpage";
-import Navbar from "./components/navbar";
+import Home from "./pages/home";
+import LandingPage from "./pages/landingpage";
+// import navbar from "./components/navbar";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/home" />
+          <Route path="/home" element={<Home />} />
           <Route path="/landingpage" element={<LandingPage />} />
         </Routes>
       </Router>
@@ -26,17 +27,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
+     */}
     </>
   );
 }

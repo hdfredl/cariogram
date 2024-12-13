@@ -1,0 +1,92 @@
+.containerWrapper {
+  display: flex; /* Enables flex layout */
+  justify-content: center; /* Centers the entire container horizontally */
+  align-items: stretch; /* Ensures child elements have equal height */
+  height: 100vh; /* Full height of the viewport */
+}
+
+.anotherContainer {
+  display: flex; /* Enables flex layout for its children */
+  width: 100%; /* Full width of the parent container */
+  max-width: 1200px; /* Optional: Sets a max-width for the container */
+  margin: 0 auto; /* Centers the container */
+}
+
+.leftBlock,
+.centerBlock,
+.rightBlock {
+  flex: 1; /* Each block takes equal width by default */
+  padding: 20px; /* Add some padding for spacing */
+  box-sizing: border-box; /* Ensures padding is included in width calculations */
+}
+
+.leftBlock {
+  text-align: left; /* Align content to the left */
+}
+
+.centerBlock {
+  text-align: center; /* Align content to the center */
+}
+
+.rightBlock {
+  text-align: right; /* Align content to the right */
+}
+
+.scaleButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.numberButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.numberText {
+  font-size: 14px;
+  padding: 5px 10px;
+  background-color: #dcdcdc;
+  border-radius: 4px;
+}
+
+.numberControl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.numberBox {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #333;
+  font-size: 24px;
+  background-color: #333;
+  border-radius: 8px;
+}
+
+.controlButton {
+  padding: 10px 10px;
+  font-size: 15px;
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.controlButton:hover {
+  background-color: #2874a6;
+}
+
+h4 {
+  margin: 0 0 10px; /* Add spacing below headings */
+}
