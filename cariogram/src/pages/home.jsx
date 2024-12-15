@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styling/Home.css";
 import HomeButtons from "../HomeFunctions/HomeButtons";
+import HomeRiskDropdown from "../HomeFunctions/HomeRiskDropdown";
 
 function Home() {
   // Test
@@ -25,13 +26,16 @@ function Home() {
 
   return (
     <div className="containerWrapper">
+      <div className="navBar">
+        <h4>Navbar</h4>
+      </div>
       <div className="anotherContainer">
-        <div>
+        <div className="startWrapper">
           <div className="leftBlock">
             <h4>Lägg Navbar här</h4>
           </div>
         </div>
-        <div>
+        <div className="centerWrapper">
           <div className="centerBlock">
             <div classNane="diagramInformation">
               <p>All info om Diagram visas i denna div</p>
@@ -39,20 +43,28 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="topRightBlock"></div>
-        <div className="rightBlock">
-          <div className="scaleButtons">
-            <h4>Alla 10 knappar visas här i denna div</h4>
-            <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
+        <div className="endWrapper">
+          <div className="topRightBlock">
+            <p>Insert Risk dropdown</p>
+            <HomeRiskDropdown />
+            <HomeRiskDropdown />
+          </div>
+        </div>
+        <div>
+          <div className="rightBlock">
+            <div className="scaleButtons">
+              <h4>Alla 10 knappar visas här i denna div</h4>
+              <HomeButtons />
+              <HomeButtons />
+              <HomeButtons />
+              <HomeButtons />
+              <HomeButtons />
+              <HomeButtons />
+              <HomeButtons />
+              <HomeButtons />
+              <HomeButtons />
+              <HomeButtons />
+            </div>
           </div>
         </div>
       </div>

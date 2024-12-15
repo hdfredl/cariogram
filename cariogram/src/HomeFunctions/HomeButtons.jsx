@@ -15,7 +15,7 @@ function HomeButtons() {
 
   return (
     <div className="numberControl">
-      <p>*Pass argument as names. No magic numbers*</p>
+      <p>*Pass argument as names*</p>
 
       <button onClick={decreaseNumber} className="controlButton">
         -

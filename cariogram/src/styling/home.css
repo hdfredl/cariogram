@@ -5,11 +5,65 @@
   height: 100vh; /* Full height of the viewport */
 }
 
+.navBar {
+  display: flex;
+  height: 30px;
+  max-width: 1200px;
+  justify-content: center;
+}
+
 .anotherContainer {
   display: flex; /* Enables flex layout for its children */
   width: 100%; /* Full width of the parent container */
   max-width: 1200px; /* Optional: Sets a max-width for the container */
   margin: 0 auto; /* Centers the container */
+}
+
+.startWrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.centerWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.endWrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 1200px;
+}
+.riskDropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.dropdownSelect {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dropdownSelect:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.dropdownMessage {
+  font-size: 14px;
+  color: #555;
 }
 
 .leftBlock,
@@ -22,14 +76,20 @@
 
 .leftBlock {
   text-align: left; /* Align content to the left */
+  justify-content: flex-end;
 }
 
 .centerBlock {
+  display: flex;
   text-align: center; /* Align content to the center */
 }
 
 .rightBlock {
+  display: flex;
   text-align: right; /* Align content to the right */
+  justify-content: flex-end;
+  width: 150%;
+  max-width: 1200px;
 }
 
 .scaleButtons {
@@ -38,6 +98,8 @@
   align-items: center;
   gap: 20px;
   padding: 20px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .numberButtons {
@@ -58,7 +120,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 1px;
 }
 
 .numberBox {
