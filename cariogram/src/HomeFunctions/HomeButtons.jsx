@@ -1,30 +1,53 @@
 import React, { useState } from "react";
 import "../styling/Home.css";
+import sourceData from "../data/sourceData.json";
 
 function HomeButtons() {
-  // useStates for triggering
-  const [number, setNumber] = useState(0);
+  const [number, setNumber] = React.useState(sourceData.map(() => 0));
 
-  const increaseNumber = () => {
-    if (number < 3) setNumber(number + 1);
+  const increaseNumber = (index) => {
+    setNumber((prev) => {
+      const updated = [...prev];
+
+      if (updated[index] < 3) {
+        updated[index] += 1;
+      }
+      return updated;
+    });
   };
 
-  const decreaseNumber = () => {
-    if (number > 0) setNumber(number - 1);
+  const decreaseNumber = (index) => {
+    setNumber((prev) => {
+      const updated = [...prev];
+
+      if (updated[index] > 0) {
+        updated[index] -= 1;
+      }
+      return updated;
+    });
   };
 
   return (
-    <div className="numberControl">
-      <p>*Pass argument as names*</p>
-
-      <button onClick={decreaseNumber} className="controlButton">
-        -
-      </button>
-      <div className="numberBox">{number}</div>
-      <button onClick={increaseNumber} className="controlButton">
-        +
-      </button>
-      <p>0-3</p>
+    <div className="numberControlContainer">
+      {sourceData.map((data, index) => (
+        <div key={index} className="numberControl">
+          <p>{data.label}</p>
+          <button
+            onClick={() => decreaseNumber(index)}
+            className="controlButton"
+          >
+            -
+          </button>
+          <div className="numberBox">{number[index]}</div>
+          <button
+            onClick={() => increaseNumber(index)}
+            className="controlButton"
+          >
+            +
+          </button>
+          <p>0-3</p>
+        </div>
+      ))}
     </div>
   );
 }

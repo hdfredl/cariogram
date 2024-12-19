@@ -7,29 +7,10 @@ import HomeDiagramInformation from "../HomeFunctions/HomeDiagramInformation";
 import Navbar from "../components/navbar";
 import UserInformation from "../components/userinformation";
 import { Chart as ChartJS } from "chart.js/auto";
-import { Bar, Doughnut, Line } from "react-chartjs-2";
+import { Bar, Doughnut, Line, Pie } from "react-chartjs-2";
 import sourceData from "../data/sourceData.json";
 
 function Home() {
-  // Test
-  const CircleDiagram = () => {
-    return (
-      <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
-        <circle
-          cx="200"
-          cy="200"
-          r="150"
-          stroke="#3498db"
-          strokeWidth="6"
-          fill="none"
-        />
-        <text x="200" y="210" textAnchor="middle" fontSize="24" fill="#3498db">
-          Circle Diagram
-        </text>
-      </svg>
-    );
-  };
-
   return (
     <div className="containerWrapper">
       <div className="navBar">
@@ -54,9 +35,8 @@ function Home() {
         <div className="centerWrapper">
           <div className="centerBlock">
             <div className="diagramInformation">
-              <p>All info om Diagram visas i denna div</p>
-              <CircleDiagram />
-              <Doughnut
+              {/* Move out later and  refactor */}
+              <Pie
                 data={{
                   labels: sourceData.map((data) => data.label),
                   datasets: [
@@ -98,6 +78,7 @@ function Home() {
               </div>
             </div>
             <HomeButtons />
+            {/* <HomeButtons />
             <HomeButtons />
             <HomeButtons />
             <HomeButtons />
@@ -105,8 +86,7 @@ function Home() {
             <HomeButtons />
             <HomeButtons />
             <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
+            <HomeButtons /> */}
           </div>
         </div>
       </div>

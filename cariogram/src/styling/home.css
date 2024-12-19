@@ -117,6 +117,16 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 100%;
+  width: 75%;
+}
+
+.diagramInformation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 50%;
 }
 
 .homeDiagramInformation {
@@ -180,11 +190,17 @@
   border-radius: 4px;
 }
 
+.numberControlContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-end;
+}
+
 .numberControl {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 1px;
 }
 
 .numberBox {
@@ -194,17 +210,18 @@
   align-items: center;
   justify-content: center;
   border: 2px solid #333;
-  font-size: 24px;
+  font-size: 16px;
+  border-radius: 4px;
   background-color: #333;
-  border-radius: 8px;
+  text-align: center;
 }
 
 .controlButton {
-  padding: 10px 10px;
-  font-size: 15px;
-  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
   background-color: #3498db;
-  color: #fff;
+  color: white;
+  border: none;
   border-radius: 4px;
   cursor: pointer;
 }
