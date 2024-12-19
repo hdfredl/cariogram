@@ -1,36 +1,59 @@
+#root {
+  height: 100%;
+  width: 100%;
+  /* overflow: hidden;  */
+}
+
 .containerWrapper {
-  display: flex; /* Enables flex layout */
-  justify-content: center; /* Centers the entire container horizontally */
-  align-items: stretch; /* Ensures child elements have equal height */
-  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
+  width: auto;
+  height: 100vh;
 }
 
 .navBar {
   display: flex;
   height: 30px;
-  max-width: 1200px;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 10px;
 }
 
 .anotherContainer {
-  display: flex; /* Enables flex layout for its children */
-  width: 100%; /* Full width of the parent container */
-  max-width: 1200px; /* Optional: Sets a max-width for the container */
-  margin: 0 auto; /* Centers the container */
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
 .startWrapper {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   width: 100%;
-  max-width: 1200px;
+  margin-left: 20px;
 }
 
 .centerWrapper {
+  position: absolute;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
   width: 100%;
+  left: 0;
+  transform: translateY(-10%);
   max-width: 1200px;
+}
+
+.spaceDividerOne {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-left: 50px;
 }
 
 .endWrapper {
@@ -43,6 +66,7 @@
   display: flex;
   flex-direction: column;
   align-items: start;
+  transform: translateY(-10%);
   gap: 10px;
   margin-top: 5px;
 }
@@ -66,40 +90,80 @@
   color: #555;
 }
 
-.leftBlock,
-.centerBlock,
-.rightBlock {
-  flex: 1; /* Each block takes equal width by default */
-  padding: 20px; /* Add some padding for spacing */
-  box-sizing: border-box; /* Ensures padding is included in width calculations */
+.leftBlock {
+  position: absolute;
+  left: 0;
+  top: 60%;
+  margin-top: 10%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
 }
 
-.leftBlock {
-  text-align: left; /* Align content to the left */
+.rightBlock {
+  display: flex;
   justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  margin-top: -7%;
 }
 
 .centerBlock {
   display: flex;
-  text-align: center; /* Align content to the center */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.rightBlock {
+.homeDiagramInformation {
+  border: 2px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  margin: 20px auto;
+  background-color: #555;
   display: flex;
-  text-align: right; /* Align content to the right */
-  justify-content: flex-end;
-  width: 150%;
-  max-width: 1200px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.colorBox {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-left: 10px;
+  border-radius: 4px;
+}
+
+.greenColor {
+  background-color: green;
+}
+
+.purpleColor {
+  background-color: purple;
+}
+
+.lightredColor {
+  background-color: lightcoral;
+}
+
+.tealColor {
+  background-color: teal;
+}
+
+.yellowColor {
+  background-color: yellow;
 }
 
 .scaleButtons {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
-  padding: 20px;
-  width: 100%;
-  max-width: 1200px;
 }
 
 .numberButtons {
@@ -150,5 +214,19 @@
 }
 
 h4 {
-  margin: 0 0 10px; /* Add spacing below headings */
+  margin: 0 0 10px;
+}
+
+.displayUser {
+  position: absolute;
+  left: 0%;
+  top: 5%;
+  transform: translateY(-25%);
+  border: 2px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  width: 20%;
+  background-color: #555;
+  display: flex;
+  flex-direction: row;
 }

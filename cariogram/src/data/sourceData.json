@@ -1,0 +1,12 @@
+[
+  { "label": "Karieserfarenhet", "value": 1 },
+  { "label": "Relaterade allmänsjukdomar", "value": 1 },
+  { "label": "Kost innehåll", "value": 1 },
+  { "label": "Kost intagsfrekvens", "value": 1 },
+  { "label": "Plackmängd", "value": 1 },
+  { "label": "Mutansstreptokocker", "value": 1 },
+  { "label": "Flourprogram", "value": 1 },
+  { "label": "Salivsekretion", "value": 1 },
+  { "label": "Salivens buffertkapacitet", "value": 1 },
+  { "label": "Klinisk bedömning", "value": 1 }
+]

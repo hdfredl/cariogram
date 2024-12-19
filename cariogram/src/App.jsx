@@ -2,7 +2,11 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 // import { ProtectedRoute } from "./components/ProtectedRoute";
+import { Chart as ChartJS } from "chart.js/auto";
+import { Bar, Doughnut, Line } from "react-chartjs-2";
 
 import Home from "./pages/home";
 import LandingPage from "./pages/landingpage";
