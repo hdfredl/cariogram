@@ -29,7 +29,7 @@ function HomeRiskDropdown() {
       </select>
       {selectedOption && (
         <p className="dropdownMessage">
-          You selected: <strong>{selectedOption}</strong>
+          Du har valt: <strong>{selectedOption}</strong>
         </p>
       )}
     </div>

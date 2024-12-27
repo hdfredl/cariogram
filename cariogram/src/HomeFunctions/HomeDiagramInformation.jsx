@@ -1,24 +1,19 @@
 import React, { useState } from "react";
 import "../styling/Home.css";
+import diagramData from "../data/diagramDataTable.json";
 
 function HomeDiagramInformation() {
   return (
     <div className="homeDiagramInformation">
-      <h4>
-        Magic number: <span className="colorBox greenColor"></span>
-      </h4>
-      <h4>
-        Magic number: <span className="colorBox purpleColor"></span>
-      </h4>
-      <h4>
-        Magic number: <span className="colorBox lightredColor"></span>
-      </h4>
-      <h4>
-        Magic number: <span className="colorBox tealColor"></span>
-      </h4>
-      <h4>
-        Magic number: <span className="colorBox yellowColor"></span>
-      </h4>
+      {diagramData.map((data, index) => (
+        <h4 key={index}>
+          <span
+            className="colorBox"
+            style={{ backgroundColor: data["background-color"] }}
+          ></span>
+          {data.label}
+        </h4>
+      ))}
     </div>
   );
 }

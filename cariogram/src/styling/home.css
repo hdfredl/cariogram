@@ -139,7 +139,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .colorBox {
@@ -193,7 +193,7 @@
 .numberControlContainer {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 5px;
   align-items: flex-end;
 }
 
@@ -246,4 +246,9 @@ h4 {
   background-color: #555;
   display: flex;
   flex-direction: row;
+}
+
+.chartContainer {
+  margin-top: 30px;
+  text-align: center;
 }

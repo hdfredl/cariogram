@@ -8,9 +8,29 @@ import Navbar from "../components/navbar";
 import UserInformation from "../components/userinformation";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Bar, Doughnut, Line, Pie } from "react-chartjs-2";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 import sourceData from "../data/sourceData.json";
+// import diagramDataTable"../data/diagramDataTable.json";
+
+ChartJS.register(ChartDataLabels);
 
 function Home() {
+  const [chartData, setChartData] = React.useState([]);
+  const [selectedLabels, setSelectedLabels] = React.useState([]);
+
+  const handleDataUpdate = (numbers) => {
+    const total = numbers.reduce((sum, num) => sum + num, 0);
+    const filteredData = numbers
+      .map((value, index) => ({
+        label: sourceData[index].label,
+        value: (value / total) * 100 || 0,
+      }))
+      .filter((item) => item.value > 0);
+
+    setChartData(filteredData.map((item) => item.value));
+    setSelectedLabels(filteredData.map((item) => item.label));
+  };
+
   return (
     <div className="containerWrapper">
       <div className="navBar">
@@ -35,31 +55,42 @@ function Home() {
         <div className="centerWrapper">
           <div className="centerBlock">
             <div className="diagramInformation">
-              {/* Move out later and  refactor */}
               <Pie
                 data={{
-                  labels: sourceData.map((data) => data.label),
+                  // labels: selectedLabels,
                   datasets: [
                     {
-                      label: "Count",
-                      data: sourceData.map((data) => data.value),
+                      data: chartData,
                       backgroundColor: [
                         "rgba(0, 128, 0, 0.8)",
                         "rgba(128, 0, 128, 0.8)",
                         "rgba(240, 128, 128, 0.8)",
                         "rgba(0, 128, 128, 0.8)",
                         "rgba(255, 255, 0, 0.8)",
-                        "rgba(43, 63, 229, 0.8)",
-                        "rgba(43, 63, 229, 0.8)",
-                        "rgba(43, 63, 229, 0.8)",
-                        "rgba(43, 63, 229, 0.8)",
-                        "rgba(43, 63, 229, 0.8)",
-                        "rgba(43, 63, 229, 0.8)",
-                        "rgba(43, 63, 229, 0.8)",
                       ],
-                      borderRadius: 5,
                     },
                   ],
+                }}
+                options={{
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        label: function (tooltipItem) {
+                          const value = tooltipItem.raw; // percntage value
+                          const label = selectedLabels[tooltipItem.dataIndex];
+                          return `${label}: ${value.toFixed(1)}%`;
+                        },
+                      },
+                    },
+                    datalabels: {
+                      display: true,
+                      formatter: (value) => `${value.toFixed(1)}%`,
+                      color: "#fff",
+                      font: {
+                        weight: "bold",
+                      },
+                    },
+                  },
                 }}
               />
             </div>
@@ -77,16 +108,7 @@ function Home() {
                 <HomeRiskDropdown />
               </div>
             </div>
-            <HomeButtons />
-            {/* <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
-            <HomeButtons />
-            <HomeButtons /> */}
+            <HomeButtons onDataUpdate={handleDataUpdate} />
           </div>
         </div>
       </div>
