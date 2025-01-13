@@ -6,32 +6,36 @@
 
 .navbar {
   background-color: #333;
-  padding: 10px 10px;
+  padding: 10px 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  width: 40%; /* Ensures it spans the width of the page */
+  width: 100%;
   z-index: 1;
-  border-radius: 1%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbarList {
   list-style-type: none;
   display: flex;
-  gap: 20px;
+  gap: 15px;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .navbarItem {
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
   cursor: pointer;
-  padding: 10px 15px;
+  padding: 8px 12px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  text-align: center;
 }
 
 .navbarItem:hover {
@@ -48,4 +52,45 @@
   padding: 20px;
   background-color: #f4f4f4;
   flex-grow: 1;
+}
+
+.hamburgerMenu {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburgerMenu {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navbarList {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbarList.showMenu {
+    display: flex;
+  }
+
+  .navbarList.hideMenu {
+    display: none;
+  }
+
+  .navbarItem {
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+  }
 }

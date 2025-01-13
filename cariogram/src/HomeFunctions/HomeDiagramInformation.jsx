@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "../styling/Home.css";
-import diagramData from "../data/diagramDataTable.json";
+import diagramDataTable from "../data/diagramDataTable.json";
 
 function HomeDiagramInformation() {
   return (
     <div className="homeDiagramInformation">
-      {diagramData.map((data, index) => (
+      {diagramDataTable.map((data, index) => (
         <h4 key={index}>
           <span
             className="colorBox"

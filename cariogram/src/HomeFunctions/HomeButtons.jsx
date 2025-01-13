@@ -1,12 +1,52 @@
 import React, { useState } from "react";
 import "../styling/Home.css";
-import sourceData from "../data/sourceData.json";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import sourceData from "../data/sourceData.json";
+import diagramDataTable from "../data/diagramDataTable.json";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function HomeButtons({ onDataUpdate }) {
-  const [number, setNumber] = React.useState(sourceData.map(() => 0));
+  const [number, setNumber] = useState(sourceData.map(() => 0));
+
+  const calculateCategoryScores = () => {
+    const categoryScores = diagramDataTable.map((category) => {
+      const categoryItems = sourceData
+        .map((item, index) => ({
+          ...item,
+          origIndex: index,
+        }))
+        .filter((data) => data.category === category.category);
+
+      const categoryScore = categoryItems.reduce(
+        (sum, item) => sum + number[item.origIndex] * item.weight,
+        0
+      );
+
+      return {
+        label: category.label,
+        individualScore: categoryScore,
+        color: category["background-color"],
+      };
+    });
+
+    // count all scores in categories
+    const totalScore = categoryScores.reduce(
+      (sum, category) => sum + category.individualScore,
+      0
+    );
+
+    // cap to 100%
+    return categoryScores.map((category) => ({
+      label: category.label,
+      value:
+        // if > 0
+        totalScore > 0
+          ? ((category.individualScore / totalScore) * 100).toFixed(1)
+          : 0,
+      color: category.color,
+    }));
+  };
 
   const increaseNumber = (index) => {
     setNumber((prev) => {
@@ -29,7 +69,8 @@ function HomeButtons({ onDataUpdate }) {
   };
 
   React.useEffect(() => {
-    onDataUpdate(number);
+    const categoryScores = calculateCategoryScores();
+    onDataUpdate(categoryScores);
   }, [number]);
 
   return (
