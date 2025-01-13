@@ -1,68 +1,56 @@
 import React, { useContext, useEffect, useState } from "react";
+import DeviceType from "../hooks/devicetype";
 import "../styling/navbar.css";
-// import { NavLink, useNavigate } from "react-router-dom";
-// import { Dropdown, Modal } from "react-bootstrap";
 
 function Navbar() {
-  // Create navbar options from cariogram
   const [activeComponent, setActiveComponent] = useState("Hem");
 
-  // Dummy data
-  const Hem = () => <div>Welcome to Hem!</div>;
-  const Nytt = () => <div>Explore Nytt!</div>;
-  const OmOss = () => <div>About us in Om oss!</div>;
-  const Hjalp = () => <div>Need help? Check Hjälp!</div>;
-  const Tolkning = () => <div>Analyze in Tolkning!</div>;
-  const Utskrift = () => <div>Print section in Utskrift!</div>;
-  const Anteckningar = () => <div>Notes go in Anteckningar!</div>;
+  const [menuOpen, setMenuOpen] = useState(false);
+  const isMobile = DeviceType();
 
-  const renderActiveComponent = () => {
-    switch (activeComponent) {
-      case "Hem":
-        return <Hem />;
-      case "Nytt":
-        return <Nytt />;
-      case "Om oss":
-        return <OmOss />;
-      case "Hjälp":
-        return <Hjalp />;
-      case "Tolkning":
-        return <Tolkning />;
-      case "Utskrift":
-        return <Utskrift />;
-      case "Anteckningar":
-        return <Anteckningar />;
-      default:
-        return <Hem />;
-    }
-  };
+  // Temp
+  const navOptions = [
+    { name: "Hem" },
+    { name: "Nytt" },
+    { name: "Om oss" },
+    { name: "Hjälp" },
+    { name: "Tolkning" },
+    { name: "Utskrift" },
+    { name: "Anteckningar" },
+  ];
 
   return (
     <div className="navbarWrapper">
       <nav className="navbar">
-        <ul className="navbarList">
-          {[
-            "Hem",
-            "Nytt",
-            "Om oss",
-            "Hjälp",
-            "Tolkning",
-            "Utskrift",
-            "Anteckningar",
-          ].map((option, index) => (
+        {isMobile && (
+          <button
+            className="hamburgerMenu"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            ☰
+          </button>
+        )}
+        <ul
+          className={`navbarList ${
+            isMobile && menuOpen ? "showMenu" : "hideMenu"
+          }`}
+        >
+          {navOptions.map((option, index) => (
             <li
               key={index}
               className={`navbarItem ${
-                activeComponent === option ? "active" : ""
+                activeComponent === option.name ? "active" : ""
               }`}
-              onClick={() => setActiveComponent(option)}
+              onClick={() => {
+                setActiveComponent(option.name);
+                if (isMobile) setMenuOpen(false); // close
+              }}
             >
-              {option}
+              {option.name}
             </li>
           ))}
         </ul>
       </nav>
-      {/* <div className="contentWrapper">{renderActiveComponent()}</div> */}
     </div>
   );
 }

@@ -1,7 +1,32 @@
 [
-  { "label": " Chans att undvika karies", "background-color": "green" },
-  { "label": " Kost", "background-color": "purple" },
-  { "label": " Bakterier", "background-color": "lightcoral" },
-  { "label": " Mottaglighet", "background-color": "teal" },
-  { "label": " Omständigheter", "background-color": "yellow" }
+  {
+    "label": "Chans att undvika karies",
+    "background-color": "green",
+    "weight": 1,
+    "category": "avoid_caries"
+  },
+  {
+    "label": "Kost",
+    "background-color": "purple",
+    "weight": 1.5,
+    "category": "diet"
+  },
+  {
+    "label": "Bakterier",
+    "background-color": "lightcoral",
+    "weight": 2,
+    "category": "bacteria"
+  },
+  {
+    "label": "Mottaglighet",
+    "background-color": "teal",
+    "weight": 0.5,
+    "category": "susceptibility"
+  },
+  {
+    "label": "Omständigheter",
+    "background-color": "yellow",
+    "weight": 1.2,
+    "category": "circumstances"
+  }
 ]

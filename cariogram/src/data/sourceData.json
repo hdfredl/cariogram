@@ -1,12 +1,52 @@
 [
-  { "label": "Karieserfarenhet", "value": 1 },
-  { "label": "Relaterade allmänsjukdomar", "value": 1 },
-  { "label": "Kost innehåll", "value": 1 },
-  { "label": "Kost intagsfrekvens", "value": 1 },
-  { "label": "Plackmängd", "value": 1 },
-  { "label": "Mutansstreptokocker", "value": 1 },
-  { "label": "Flourprogram", "value": 1 },
-  { "label": "Salivsekretion", "value": 1 },
-  { "label": "Salivens buffertkapacitet", "value": 1 },
-  { "label": "Klinisk bedömning", "value": 1 }
+  {
+    "label": "Karieserfarenhet",
+    "value": 1,
+    "weight": 0.15,
+    "category": "avoid_caries"
+  },
+  {
+    "label": "Relaterade allmänsjukdomar",
+    "value": 1,
+    "weight": 0.1,
+    "category": "circumstances"
+  },
+  { "label": "Kost innehåll", "value": 1, "weight": 0.2, "category": "diet" },
+  {
+    "label": "Kost intagsfrekvens",
+    "value": 1,
+    "weight": 0.2,
+    "category": "diet"
+  },
+  { "label": "Plackmängd", "value": 1, "weight": 0.1, "category": "bacteria" },
+  {
+    "label": "Mutansstreptokocker",
+    "value": 1,
+    "weight": 0.1,
+    "category": "bacteria"
+  },
+  {
+    "label": "Flourprogram",
+    "value": 1,
+    "weight": 0.05,
+    "category": "susceptibility"
+  },
+  {
+    "label": "Salivsekretion",
+    "value": 1,
+    "weight": 0.05,
+    "category": "susceptibility"
+  },
+  {
+    "label": "Salivens buffertkapacitet",
+    "value": 1,
+    "weight": 0.05,
+    "category": "susceptibility"
+  },
+  {
+    "label": "Klinisk bedömning",
+    "value": 1,
+    "weight": 0.05,
+    "category": "avoid_caries"
+  }
 ]

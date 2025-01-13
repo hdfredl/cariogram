@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../styling/Home.css";
 
 function HomeRiskDropdown() {
-  // useStates for triggering
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleChange = (event) => {
