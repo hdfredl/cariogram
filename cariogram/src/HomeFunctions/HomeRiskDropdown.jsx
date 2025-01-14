@@ -22,9 +22,9 @@ function HomeRiskDropdown() {
           Välj alternativ
         </option>
         <p>Land område: </p>
-        <option value="landArea">Land Area</option>
+        <option value="landArea">Land Område</option>
         <p>Grupp: </p>
-        <option value="riskArea">Risk Area</option>
+        <option value="riskArea">Risk Område</option>
       </select>
       {selectedOption && (
         <p className="dropdownMessage">

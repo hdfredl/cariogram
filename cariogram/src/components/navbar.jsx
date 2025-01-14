@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import DeviceType from "../hooks/devicetype";
 import UserInformation from "../components/userinformation";
+import HomeDiagramInformation from "../HomeFunctions/HomeDiagramInformation";
 import "../styling/navbar.css";
+import "../styling/homediagraminformation.css";
 
 function Navbar() {
   const [activeComponent, setActiveComponent] = useState("Hem");
@@ -24,17 +26,22 @@ function Navbar() {
     <div className="navbarWrapper">
       <nav className="navbar">
         {isMobile && (
+          <div className="displayUserPhone2">
+            <HomeDiagramInformation />
+          </div>
+        )}
+        {isMobile && (
+          <div className="displayUserPhone">
+            <UserInformation />
+          </div>
+        )}
+        {isMobile && (
           <button
             className="hamburgerMenu"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             ☰
           </button>
-        )}
-        {isMobile && (
-          <div className="displayUserPhone">
-            <UserInformation />
-          </div>
         )}
         <ul
           className={`navbarList ${

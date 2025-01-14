@@ -252,13 +252,25 @@ h4 {
   position: absolute;
   left: 0%;
   top: 20%;
+  transform: translateY(-10%);
+  /* border: 2px solid #ccc;
+  padding: 1px; */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* .displayUserPhone2 {
+  position: absolute;
+  left: 0%;
+  top: 20%;
   transform: translateY(-15%);
   border: 2px solid #ccc;
   padding: 1px;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
-}
+} */
 
 .chartContainer {
   margin-top: 30px;
