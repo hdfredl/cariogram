@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import DeviceType from "../hooks/devicetype";
+import UserInformation from "../components/userinformation";
 import "../styling/navbar.css";
 
 function Navbar() {
@@ -29,6 +30,11 @@ function Navbar() {
           >
             ☰
           </button>
+        )}
+        {isMobile && (
+          <div className="displayUserPhone">
+            <UserInformation />
+          </div>
         )}
         <ul
           className={`navbarList ${
