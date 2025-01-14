@@ -31,9 +31,6 @@ function Home() {
       <div className="anotherContainer">
         {isMobile ? (
           <div className="phoneView">
-            <div className="displayUser">
-              <UserInformation />
-            </div>
             <div className="centerWrapper">
               <Pie
                 data={{

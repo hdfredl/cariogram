@@ -12,23 +12,23 @@ function UserInformation() {
       {isMobile ? (
         <>
           <button className="dropdownToggle" onClick={() => setIsOpen(!isOpen)}>
-            User
+            Patient
           </button>
           {isOpen && (
             <div className="dropdownContent">
-              <h4>Name: </h4>
+              <h4>Namn: </h4>
               <h4>Personnr: </h4>
-              <h4>Date: </h4>
-              <h4>Investigator: </h4>
+              <h4>Datum: </h4>
+              <h4>Undersökare: </h4>
             </div>
           )}
         </>
       ) : (
         <>
-          <h4>Name: </h4>
+          <h4>Namn: </h4>
           <h4>Personnr: </h4>
-          <h4>Date: </h4>
-          <h4>Investigator: </h4>
+          <h4>Datum: </h4>
+          <h4>Undersökare: </h4>
         </>
       )}
     </div>
