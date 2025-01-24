@@ -4,7 +4,7 @@ A program that calculates your Caries risks. Mimic:ing an existing program calle
 
 But to visit the project: https://hdfredl.github.io/cariogram/
 
-And soon the project will be have a database and work with C# as the backend for data handling etc. 
+And soon the project will have a database and work with C# as the backend for data handling etc. 
 
 
 To run the program on your pc / type in following in your terminal:
